@@ -205,7 +205,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 24px;
     background: #333;
     color: white;
 }
@@ -224,4 +224,17 @@ footer {
 
 .social-media a img:hover {
     transform: scale(1.2);
+}
+
+/* Блок с видео-плеером */
+.video-player {
+    text-align: center;
+    width: 100%;
+    padding: 40px 0;
+}
+
+.video-player video {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
 }
