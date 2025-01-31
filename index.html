@@ -3,43 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Десктопная версия</title>
+    <title>Coffee Shop</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body class="light-theme">
 
 <header>
-    <div class="logo">LOGO <span>Tagline</span></div>
+    <div class="logo">COFFEE <span>SHOP</span></div>
     <button id="theme-toggle">🌙</button>
     <button class="login-btn">Log In</button>
 </header>
 
-<section class="hero">
-    <img src="hero.jpg" alt="Hero Image">
-    <button class="video-btn">▶</button>
-</section>
-
-<section class="benefits">
-    <div class="benefit">Benefit #1</div>
-    <div class="benefit">Benefit #2</div>
-    <div class="benefit">Benefit #3</div>
-</section>
-
-<section class="testimonials">
-    <h2>Testimonials</h2>
-    <div class="slider">
-        <p>Client Feedback 1</p>
-        <p>Client Feedback 2</p>
-        <p>Client Feedback 3</p>
+<!-- Карусель -->
+<section class="carousel">
+    <div class="carousel-container">
+        <img src="assets/img/ivan-zolo_0.jpg" class="carousel-img">
+        <img src="assets/img/39cd2a1fbefa17b7925a84318e564256.jpg" class="carousel-img">
+        <img src="assets/img/images.jfif" class="carousel-img">
+        <img src="img4.jpg" class="carousel-img">
+        <img src="img5.jpg" class="carousel-img">
     </div>
 </section>
 
-<section class="features">
-    <div class="feature">Feature #1</div>
-    <div class="feature">Feature #2</div>
-    <div class="feature">Feature #3</div>
+<!-- Блок товаров/услуг -->
+<section class="products">
+    <h2>Our Products & Services</h2>
+    <div class="product-list">
+        <div class="product-card">
+            <img src="" alt="Product 1">
+            <h3>Coffee</h3>
+            <p>We have the best coffee in the city. Only fresh beans.</p>
+        </div>
+        <div class="product-card">
+            <img src="product2.jpg" alt="Product 2">
+            <h3>Desserts</h3>
+            <p>We also have coffee supplements. For example, buns and desserts made by professionals.</p>
+        </div>
+        <div class="product-card">
+            <img src="product3.jpg" alt="Product 3">
+            <h3>Service</h3>
+            <p>Our cafe has wonderful and friendly staff</p>
+        </div>
+    </div>
 </section>
 
+<!-- Блок с отзывами -->
+<section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-container">
+        <img src="assets/img/user_icon.png" class="testimonial-img" alt="Customer">
+        <div class="testimonial-slider">
+            <div class="testimonial active">
+                <p>"This is the best service I have ever used! Highly recommended!"</p>
+                <h4>- Customer 1</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Amazing quality and fantastic support. Will buy again!"</p>
+                <h4>- Customer 2</h4>
+            </div>
+            <div class="testimonial">
+                <p>"I love this product! It changed my life for the better!"</p>
+                <h4>- Customer 3</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Блок с преимуществами -->
+<section class="benefits">
+    <h2>Why Choose Us?</h2>
+    <div class="benefit-list">
+        <div class="benefit-card">
+            <h1>feature 1</h1>
+            <h3>Fast Delivery</h3>
+            <p>Get your order delivered within 24 hours.</p>
+        </div>
+        <div class="benefit-card">
+            <h1>feature 2</h1>
+            <h3>Premium Quality</h3>
+            <p>We offer only top-quality products.</p>
+        </div>
+        <div class="benefit-card">
+            <h1>feature 3</h1>
+            <h3>24/7 Support</h3>
+            <p>Our team is always here to help you.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Форма подписки -->
 <section class="signup">
     <h2>Sign Up / Get Started</h2>
     <form id="signup-form">
@@ -48,11 +101,7 @@
     </form>
 </section>
 
-<footer>
-    <p>Menu on Footer</p>
-    <p>Social Media</p>
-</footer>
-
+<!-- Модальное окно -->
 <div id="modal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
@@ -62,6 +111,16 @@
         <button id="modal-submit">Submit</button>
     </div>
 </div>
+
+<footer>
+    <p>Menu on Footer</p>
+    <div class="social-media">
+        <a href="#"><img src="assets/img/Facebook_icon.webp" alt="Facebook"></a>
+        <a href="#"><img src="assets/img/Telegram_logo.svg.webp" alt="Telegram"></a>
+        <a href="#"><img src="assets/img/Instagram_icon.png.webp" alt="Instagram"></a>
+        <a href="#"><img src="assets/img/Twitter_icon.webp.png" alt="Twitter"></a>
+    </div>
+</footer>
 
 <script src="assets/js/script.js"></script>
 </body>
