@@ -1,10 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина покупок</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
 </head>
-<body>
+<body class="light-theme">
+<header>
+    <div class="logo">COFFEE <span>SHOP</span></div>
+    <button id="theme-toggle">🌙</button>
+    <button class="login-btn">Log In</button>
+    <button class ="about-us-btn">About Us</button>
+    <button class="cart-btn">Cart</button>
+</header>
+
+<div class="cart">
+    <div class="cart-header">Shopping Cart</div>
+    <div class="cart-items">
+        <div class="cart-item">
+            <img src="coffee1.jpg" alt="Coffee 1">
+            <div class="cart-item-info">
+                <div><strong>Espresso Coffee</strong></div>
+                <div>Price: $1.67</div>
+            </div>
+            <div>Quantity: 2</div>
+        </div>
+
+        <div class="cart-item">
+            <img src="coffee2.jpg" alt="Coffee 2">
+            <div class="cart-item-info">
+                <div><strong>Latte Coffee</strong></div>
+                <div>Price: $2.00</div>
+            </div>
+            <div>Quantity: 1</div>
+        </div>
+
+        <div class="cart-item">
+            <img src="coffee3.jpg" alt="Coffee 3">
+            <div class="cart-item-info">
+                <div><strong>Chicken Sandwich</strong></div>
+                <div>Price: $2.78</div>
+            </div>
+            <div>Quantity: 1</div>
+        </div>
+    </div>
+
+    <div class="cart-total">
+        <div>Total: $8.44</div>
+    </div>
+</div>
+
+<footer>
+    <p>Menu on Footer</p>
+    <div class="social-media">
+        <a href="#"><img src="assets/img/Facebook_icon.webp" alt="Facebook"></a>
+        <a href="#"><img src="assets/img/Telegram_logo.svg.webp" alt="Telegram"></a>
+        <a href="#"><img src="assets/img/Instagram_icon.png.webp" alt="Instagram"></a>
+        <a href="#"><img src="assets/img/Twitter_icon.webp.png" alt="Twitter"></a>
+    </div>
+</footer>
+
+<script src="assets/js/script.js"></script>
 
 </body>
 </html>

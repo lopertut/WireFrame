@@ -6,7 +6,6 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
-/* Темная и светлая тема */
 .light-theme {
     background: #fff;
     color: #000;
@@ -17,7 +16,6 @@ body {
     color: #fff;
 }
 
-/* Хедер */
 header {
     display: flex;
     justify-content: space-between;
@@ -30,7 +28,6 @@ header {
     font-size: 24px;
 }
 
-/* Кнопка переключения темы */
 #theme-toggle {
     background: none;
     border: none;
@@ -38,8 +35,8 @@ header {
     cursor: pointer;
 }
 
-/* Карусель */
 .carousel {
+    height: 300px;
     width: 100%;
     overflow: hidden;
 }
@@ -54,7 +51,6 @@ header {
     width: 20%;
 }
 
-/* Анимация карусели */
 @keyframes carouselAnimation {
     0% { transform: translateX(0); }
     20% { transform: translateX(-20%); }
@@ -64,7 +60,6 @@ header {
     100% { transform: translateX(0); }
 }
 
-/* Блок товаров/услуг */
 .products {
     text-align: center;
     padding: 20px;
@@ -86,12 +81,10 @@ header {
     text-align: center;
 }
 
-/* Анимация карточек */
 .product-card:hover {
     transform: scale(1.1);
 }
 
-/* Форма подписки */
 .signup {
     text-align: center;
     padding: 20px;
@@ -102,7 +95,6 @@ header {
     padding: 10px;
 }
 
-/* Модальное окно */
 .modal {
     display: none;
     position: fixed;
@@ -125,7 +117,6 @@ header {
     cursor: pointer;
 }
 
-/* Блок отзывов */
 .testimonials {
     text-align: center;
     padding: 40px;
@@ -163,13 +154,11 @@ header {
     opacity: 1;
 }
 
-/* Анимация слайдера */
 @keyframes fade {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
 
-/* Блок преимуществ */
 .benefits {
     text-align: center;
     padding: 40px;
@@ -200,7 +189,6 @@ header {
     transform: scale(1.1);
 }
 
-/* Футер */
 footer {
     display: flex;
     justify-content: space-between;
@@ -210,7 +198,6 @@ footer {
     color: white;
 }
 
-/* Социальные медиа справа */
 .social-media {
     display: flex;
     gap: 15px;
@@ -226,7 +213,6 @@ footer {
     transform: scale(1.2);
 }
 
-/* Блок с видео-плеером */
 .video-player {
     text-align: center;
     width: 100%;
@@ -236,5 +222,60 @@ footer {
 .video-player video {
     width: 80%;
     max-width: 800px;
+    border-radius: 10px;
+}
+
+
+.cart {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.cart-header {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.cart-item {
+    width: 80%;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.cart-item-info {
+    text-align: left;
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.cart-item:hover {
+    transform: scale(1.05);
+}
+
+.cart-total {
+    margin-top: 40px;
+    font-size: 24px;
+    text-align: right;
+    width: 80%;
+    padding: 15px;
+    background: #f5f5f5;
     border-radius: 10px;
 }

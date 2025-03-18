@@ -32,3 +32,16 @@ function showNextTestimonial() {
 
 // Переключение отзывов каждые 4 секунды
 setInterval(showNextTestimonial, 4000);
+
+
+document.querySelector('.cart-btn').addEventListener('click', function() {
+    window.location.href = 'cart.html';
+});
+
+document.querySelector('.about-us-btn').addEventListener('click', function() {
+    window.location.href = 'about_us.html';
+});
+
+document.querySelector('.logo').addEventListener('click', function() {
+    window.location.href = 'index.html';
+});
