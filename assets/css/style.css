@@ -1,281 +1,383 @@
-/* Креативный шрифт */
+/* Основные стили body */
 body {
-    font-family: 'Pacifico', cursive;
-    margin: 0;
-    padding: 0;
-    transition: background 0.3s, color 0.3s;
+    font-family: 'Pacifico', cursive; /* Шрифт для всего документа */
+    margin: 0; /* Убираем внешние отступы */
+    padding: 0; /* Убираем внутренние отступы */
+    transition: background 0.3s, color 0.3s; /* Плавное изменение фона и текста */
+    min-height: 100vh; /* Минимальная высота - весь экран */
+    display: flex; /* Flex-контейнер */
+    flex-direction: column; /* Дочерние элементы в колонку */
 }
 
+/* Светлая тема */
 .light-theme {
-    background: #fff;
-    color: #000;
+    background: #fff; /* Белый фон */
+    color: #000; /* Черный текст */
 }
 
+/* Темная тема */
 .dark-theme {
-    background: #1e1e1e;
-    color: #fff;
+    background: #1e1e1e; /* Темный фон */
+    color: #fff; /* Белый текст */
 }
 
+/* Шапка сайта */
 header {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    background: #333;
-    color: white;
+    display: flex; /* Flex-контейнер */
+    justify-content: space-between; /* Элементы по краям */
+    padding: 20px; /* Внутренние отступы */
+    background: #333; /* Темный фон */
+    color: white; /* Белый текст */
 }
 
+/* Основное содержимое */
+main {
+    flex: 1; /* Занимает все доступное пространство */
+}
+
+/* Логотип */
 .logo {
-    font-size: 24px;
+    font-size: 24px; /* Размер шрифта */
 }
 
+/* Кнопка смены темы */
 #theme-toggle {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
+    background: none; /* Прозрачный фон */
+    border: none; /* Без рамки */
+    font-size: 20px; /* Размер шрифта */
+    cursor: pointer; /* Курсор-указатель */
 }
 
+/* Карусель изображений */
 .carousel {
-    height: 300px;
-    width: 100%;
-    overflow: hidden;
+    height: 80%; /* Высота */
+    width: 100%; /* Ширина */
+    overflow: hidden; /* Скрытие выходящего за границы */
+    position: relative; /* Для позиционирования дочерних элементов */
 }
 
+/* Контейнер карусели */
 .carousel-container {
-    display: flex;
-    width: 500%;
-    animation: carouselAnimation 10s infinite linear;
+    display: flex; /* Flex-контейнер */
+    width: 1000%; /* Широкая ширина для прокрутки */
+    animation: carouselAnimation 60s linear infinite; /* Анимация */
+    will-change: transform; /* Оптимизация анимации */
 }
 
+/* Изображения в карусели */
 .carousel-img {
-    width: 20%;
+    width: 5%; /* Ширина изображения */
+    height: auto; /* Автоматическая высота */
+    flex-shrink: 0; /* Запрет сжатия */
+    object-fit: cover; /* Заполнение контейнера с сохранением пропорций */
 }
 
+/* Анимация карусели */
 @keyframes carouselAnimation {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(-20%); }
-    40% { transform: translateX(-40%); }
-    60% { transform: translateX(-60%); }
-    80% { transform: translateX(-80%); }
-    100% { transform: translateX(0); }
+    0% {
+        transform: translateX(0); /* Начальная позиция */
+    }
+    100% {
+        transform: translateX(-50%); /* Конечная позиция */
+    }
 }
 
-.products {
-    text-align: center;
-    padding: 20px;
-}
-
-.product-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.product-card {
-    width: 250px;
-    padding: 15px;
-    background: #f5f5f5;
-    border-radius: 10px;
-    transition: transform 0.3s;
-    text-align: center;
-}
-
-.product-card:hover {
-    transform: scale(1.1);
-}
-
-.signup {
-    text-align: center;
-    padding: 20px;
-}
-
-.signup input, .signup button {
-    margin-top: 10px;
-    padding: 10px;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-    display: flex;
-    flex-direction: column;
-}
-
-.close {
-    align-self: flex-end;
-    cursor: pointer;
-}
-
-.testimonials {
-    text-align: center;
-    padding: 40px;
-}
-
-.testimonial-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    max-width: 800px;
-    margin: auto;
-}
-
-.testimonial-img {
-    width: 120px;
-    height: 120px;
-}
-
-.testimonial-slider {
-    width: 400px;
-    overflow: hidden;
-    position: relative;
-}
-
-.testimonial {
-    display: none;
-    font-size: 18px;
-    padding: 10px;
-    transition: opacity 0.5s;
-}
-
-.testimonial.active {
-    display: block;
-    opacity: 1;
-}
-
-@keyframes fade {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-.benefits {
-    text-align: center;
-    padding: 40px;
-}
-
-.benefit-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.benefit-card {
-    width: 250px;
-    padding: 15px;
-    background: #f5f5f5;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.benefit-card img {
-    width: 100px;
-    height: 100px;
-}
-
-.benefit-card:hover {
-    transform: scale(1.1);
-}
-
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 24px;
-    background: #333;
-    color: white;
-}
-
-.social-media {
-    display: flex;
-    gap: 15px;
-}
-
-.social-media a img {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s;
-}
-
-.social-media a img:hover {
-    transform: scale(1.2);
-}
-
-.video-player {
-    text-align: center;
-    width: 100%;
-    padding: 40px 0;
-}
-
-.video-player video {
-    width: 80%;
-    max-width: 800px;
-    border-radius: 10px;
-}
-
-
-.cart {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.cart-header {
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-.cart-items {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
+/* Общие стили карточек */
+.product-card,
+.benefit-card,
+.testimonial,
 .cart-item {
-    width: 80%;
-    padding: 15px;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+/* Светлая тема - карточки */
+.light-theme .product-card,
+.light-theme .benefit-card,
+.light-theme .testimonial,
+.light-theme .cart-item {
     background: #f5f5f5;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: transform 0.3s;
+    color: #333; /* Темный текст для светлой темы */
 }
 
-.cart-item img {
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
+/* Темная тема - карточки */
+.dark-theme .product-card,
+.dark-theme .benefit-card,
+.dark-theme .testimonial,
+.dark-theme .cart-total,
+.dark-theme .cart-item {
+    background: #2d2d2d; /* Темный фон карточек */
+    color: #f0f0f0; /* Светлый текст для темной темы */
+    border: 1px solid #444; /* Граница для лучшего разделения */
 }
 
+/* Особые стили для заголовков в карточках */
+.dark-theme .product-card h3,
+.dark-theme .benefit-card h3,
+.dark-theme .testimonial h4 {
+    color: #fff; /* Белый цвет для заголовков */
+}
+
+/* Стили для текста в карточках */
+.dark-theme .product-card p,
+.dark-theme .benefit-card p,
+.dark-theme .testimonial p {
+    color: #ddd; /* Светло-серый для основного текста */
+}
+
+/* Секция продуктов */
+.products {
+    text-align: center; /* Выравнивание по центру */
+    padding: 20px; /* Внутренние отступы */
+}
+
+/* Список продуктов */
+.product-list {
+    display: flex; /* Flex-контейнер */
+    flex-wrap: wrap; /* Перенос на новую строку */
+    justify-content: center; /* Центрирование */
+    gap: 20px; /* Расстояние между элементами */
+}
+
+/* Карточка продукта */
+.product-card {
+    width: 250px; /* Ширина */
+    padding: 15px; /* Внутренние отступы */
+    background: #f5f5f5; /* Цвет фона */
+    border-radius: 10px; /* Скругление углов */
+    transition: transform 0.3s; /* Анимация трансформации */
+    text-align: center; /* Выравнивание текста */
+}
+
+/* Эффект при наведении на карточку */
+.product-card:hover {
+    transform: scale(1.1); /* Увеличение */
+}
+
+/* Секция подписки */
+.signup {
+    text-align: center; /* Выравнивание по центру */
+    padding: 20px; /* Внутренние отступы */
+}
+
+/* Поля ввода и кнопка подписки */
+.signup input, .signup button {
+    margin-top: 10px; /* Отступ сверху */
+    padding: 10px; /* Внутренние отступы */
+}
+
+/* Модальное окно */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Фиксированное позиционирование */
+    top: 50%; /* Позиционирование по вертикали */
+    left: 50%; /* Позиционирование по горизонтали */
+    transform: translate(-50%, -50%); /* Центрирование */
+    background: white; /* Белый фон */
+    padding: 20px; /* Внутренние отступы */
+    border-radius: 5px; /* Скругление углов */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень */
+}
+
+/* Содержимое модального окна */
+.modal-content {
+    display: flex; /* Flex-контейнер */
+    flex-direction: column; /* Дочерние элементы в колонку */
+}
+
+/* Кнопка закрытия */
+.close {
+    align-self: flex-end; /* Выравнивание вправо */
+    cursor: pointer; /* Курсор-указатель */
+}
+
+/* Секция отзывов */
+.testimonials {
+    text-align: center; /* Выравнивание по центру */
+    padding: 40px; /* Внутренние отступы */
+}
+
+/* Контейнер отзывов */
+.testimonial-container {
+    display: flex; /* Flex-контейнер */
+    align-items: center; /* Выравнивание по вертикали */
+    justify-content: center; /* Выравнивание по горизонтали */
+    gap: 20px; /* Расстояние между элементами */
+    max-width: 800px; /* Максимальная ширина */
+    margin: auto; /* Центрирование */
+}
+
+/* Изображение в отзыве */
+.testimonial-img {
+    width: 120px; /* Ширина */
+    height: 120px; /* Высота */
+}
+
+/* Слайдер отзывов */
+.testimonial-slider {
+    width: 400px; /* Ширина */
+    overflow: hidden; /* Скрытие выходящего за границы */
+    position: relative; /* Для позиционирования дочерних элементов */
+}
+
+/* Отзыв */
+.testimonial {
+    display: none; /* Скрыт по умолчанию */
+    font-size: 18px; /* Размер шрифта */
+    padding: 10px; /* Внутренние отступы */
+    transition: opacity 0.5s; /* Анимация прозрачности */
+}
+
+/* Активный отзыв */
+.testimonial.active {
+    display: block; /* Отображение */
+    opacity: 1; /* Полная видимость */
+}
+
+/* Анимация появления */
+@keyframes fade {
+    0% { opacity: 0; } /* Невидимый */
+    100% { opacity: 1; } /* Полностью видимый */
+}
+
+/* Секция преимуществ */
+.benefits {
+    text-align: center; /* Выравнивание по центру */
+    padding: 40px; /* Внутренние отступы */
+}
+
+/* Список преимуществ */
+.benefit-list {
+    display: flex; /* Flex-контейнер */
+    flex-wrap: wrap; /* Перенос на новую строку */
+    justify-content: center; /* Центрирование */
+    gap: 20px; /* Расстояние между элементами */
+}
+
+/* Карточка преимущества */
+.benefit-card {
+    width: 250px; /* Ширина */
+    padding: 15px; /* Внутренние отступы */
+    background: #f5f5f5; /* Цвет фона */
+    border-radius: 10px; /* Скругление углов */
+    text-align: center; /* Выравнивание текста */
+    transition: transform 0.3s; /* Анимация трансформации */
+}
+
+/* Изображение в карточке преимущества */
+.benefit-card img {
+    width: 100px; /* Ширина */
+    height: 100px; /* Высота */
+}
+
+/* Эффект при наведении */
+.benefit-card:hover {
+    transform: scale(1.1); /* Увеличение */
+}
+
+/* Подвал сайта */
+footer {
+    display: flex; /* Flex-контейнер */
+    justify-content: space-between; /* Элементы по краям */
+    align-items: center; /* Выравнивание по вертикали */
+    padding: 24px; /* Внутренние отступы */
+    background: #333; /* Темный фон */
+    color: white; /* Белый текст */
+}
+
+/* Социальные сети */
+.social-media {
+    display: flex; /* Flex-контейнер */
+    gap: 15px; /* Расстояние между элементами */
+}
+
+/* Иконки социальных сетей */
+.social-media a img {
+    width: 24px; /* Ширина */
+    height: 24px; /* Высота */
+    transition: transform 0.3s; /* Анимация трансформации */
+}
+
+/* Эффект при наведении на иконку */
+.social-media a img:hover {
+    transform: scale(1.2); /* Увеличение */
+}
+
+/* Видеоплеер */
+.video-player {
+    text-align: center; /* Выравнивание по центру */
+    width: 100%; /* Ширина */
+    padding: 40px 0; /* Внутренние отступы */
+}
+
+/* Видео */
+.video-player video {
+    width: 80%; /* Ширина */
+    max-width: 800px; /* Максимальная ширина */
+    border-radius: 10px; /* Скругление углов */
+}
+
+/* Корзина */
+.cart {
+    padding: 40px 20px; /* Внутренние отступы */
+    text-align: center; /* Выравнивание по центру */
+}
+
+/* Заголовок корзины */
+.cart-header {
+    font-size: 30px; /* Размер шрифта */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+/* Список товаров в корзине */
+.cart-items {
+    display: flex; /* Flex-контейнер */
+    flex-direction: column; /* Дочерние элементы в колонку */
+    align-items: center; /* Выравнивание по горизонтали */
+    gap: 20px; /* Расстояние между элементами */
+}
+
+/* Товар в корзине */
+.cart-item {
+    width: 50%; /* Ширина */
+    padding: 15px; /* Внутренние отступы */
+    background: #f5f5f5; /* Цвет фона */
+    border-radius: 10px; /* Скругление углов */
+    display: flex; /* Flex-контейнер */
+    justify-content: space-between; /* Распределение пространства */
+    align-items: center; /* Выравнивание по вертикали */
+    transition: transform 0.3s; /* Анимация трансформации */
+}
+
+/* Информация о товаре */
 .cart-item-info {
-    text-align: left;
-    flex-grow: 1;
-    margin-left: 20px;
+    text-align: left; /* Выравнивание текста по левому краю */
+    flex-grow: 1; /* Занимает все доступное пространство */
+    margin-left: 20px; /* Отступ слева */
 }
 
+/* Эффект при наведении на товар */
 .cart-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Небольшое увеличение */
 }
 
+/* Итоговая сумма */
 .cart-total {
-    margin-top: 40px;
-    font-size: 24px;
-    text-align: right;
-    width: 80%;
-    padding: 15px;
-    background: #f5f5f5;
-    border-radius: 10px;
+    margin-top: 40px; /* Отступ сверху */
+    font-size: 24px; /* Размер шрифта */
+    text-align: right; /* Выравнивание текста по правому краю */
+    width: 50%; /* Ширина */
+    padding: 15px; /* Внутренние отступы */
+    background: #f5f5f5; /* Цвет фона */
+    border-radius: 10px; /* Скругление углов */
+    margin-left: 24%; /* Отступ слева */
+}
+
+/* Секция "О нас" */
+.about-us-section {
+    flex-direction: column; /* Дочерние элементы в колонку */
+    justify-content: center; /* Выравнивание по вертикали */
+    align-items: center; /* Выравнивание по горизонтали */
+    text-align: center; /* Выравнивание текста по центру */
+    margin: 0 auto; /* Центрирование */
+    padding: 20px; /* Внутренние отступы */
 }

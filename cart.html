@@ -10,18 +10,18 @@
 </head>
 <body class="light-theme">
 <header>
-    <div class="logo">COFFEE <span>SHOP</span></div>
+    <div onclick="window.location.href='index.html'" class="logo"> COFFEE <span>SHOP</span></div>
     <button id="theme-toggle">🌙</button>
     <button class="login-btn">Log In</button>
-    <button class ="about-us-btn">About Us</button>
-    <button class="cart-btn">Cart</button>
+    <button class ="about-us-btn" onclick="window.location.href='about_us.html'">About Us</button>
+    <button class="cart-btn" onclick="window.location.href='cart.html'">Cart</button>
 </header>
 
+<main>
 <div class="cart">
     <div class="cart-header">Shopping Cart</div>
     <div class="cart-items">
         <div class="cart-item">
-            <img src="coffee1.jpg" alt="Coffee 1">
             <div class="cart-item-info">
                 <div><strong>Espresso Coffee</strong></div>
                 <div>Price: $1.67</div>
@@ -30,7 +30,6 @@
         </div>
 
         <div class="cart-item">
-            <img src="coffee2.jpg" alt="Coffee 2">
             <div class="cart-item-info">
                 <div><strong>Latte Coffee</strong></div>
                 <div>Price: $2.00</div>
@@ -39,7 +38,6 @@
         </div>
 
         <div class="cart-item">
-            <img src="coffee3.jpg" alt="Coffee 3">
             <div class="cart-item-info">
                 <div><strong>Chicken Sandwich</strong></div>
                 <div>Price: $2.78</div>
@@ -52,6 +50,7 @@
         <div>Total: $8.44</div>
     </div>
 </div>
+</main>
 
 <footer>
     <p>Menu on Footer</p>
